@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
@@ -45,11 +45,11 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/main.css" />
         <link rel="stylesheet" href="/css/all.min.css" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {/* Cursor effects */}
-        <div className="cursor"></div>
-        <div className="cursor-trail"></div>
-        <div className="cursor-slider">
+        <div className="cursor" suppressHydrationWarning></div>
+        <div className="cursor-trail" suppressHydrationWarning></div>
+        <div className="cursor-slider" suppressHydrationWarning>
           <img
             width="20"
             height="22"
@@ -59,7 +59,7 @@ export default function RootLayout({
         </div>
 
         {/* Preloader */}
-        <div id="preloader">
+        <div id="preloader" suppressHydrationWarning>
           <div id="text">
             <p className="active">B</p>
             <p>i</p>
@@ -81,7 +81,7 @@ export default function RootLayout({
         </div>
 
         {/* Scroll back to top */}
-        <div className="progress-wrap">
+        <div className="progress-wrap" suppressHydrationWarning>
           <svg
             className="progress-circle svg-content"
             width="100%"
@@ -92,17 +92,17 @@ export default function RootLayout({
           </svg>
         </div>
 
-        <main>
-          <div id="smooth-wrapper">
-            <div id="smooth-content">{children}</div>
+        <main suppressHydrationWarning>
+          <div id="smooth-wrapper" suppressHydrationWarning>
+            <div id="smooth-content" suppressHydrationWarning>{children}</div>
           </div>
         </main>
 
         {/* Scripts */}
         <Script src="/js/jquery-3.7.1.min.js" strategy="beforeInteractive" />
-        <Script src="/js/gsap.min.js" strategy="afterInteractive" />
-        <Script src="/js/ScrollTrigger.min.js" strategy="afterInteractive" />
-        <Script src="/js/SplitText.min.js" strategy="afterInteractive" />
+        <Script src="/js/gsap.min.js" strategy="beforeInteractive" />
+        <Script src="/js/ScrollTrigger.min.js" strategy="beforeInteractive" />
+        <Script src="/js/SplitText.min.js" strategy="beforeInteractive" />
         <Script src="/js/boostrap.bundle.min.js" strategy="afterInteractive" />
         <Script src="/js/scrollreveal.min.js" strategy="afterInteractive" />
         <Script src="/js/swiper-bundle.min.js" strategy="afterInteractive" />
@@ -111,7 +111,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Script src="/js/odometer.min.js" strategy="afterInteractive" />
-        <Script src="/js/main.js" strategy="lazyOnload" />
+        <Script src="/js/main.js" strategy="afterInteractive" />
       </body>
     </html>
   );

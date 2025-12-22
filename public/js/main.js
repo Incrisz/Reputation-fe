@@ -9,25 +9,49 @@
 ============================================================== */ 
 
 'use strict';
-(function ($) {
-  // Gsap Plugin Register
-  gsap.registerPlugin(ScrollTrigger);
 
-  // Clean up previous animations and SplitText instances on page navigation
-  const cleanup = () => {
-    // Kill all GSAP timelines and animations
+// Global cleanup function - called before React navigation
+window.__cleanupAnimations = function() {
+  if (typeof gsap !== 'undefined') {
     gsap.globalTimeline.clear();
     gsap.killTweensOf("*");
-    
-    // Refresh ScrollTrigger to avoid stale references
-    ScrollTrigger.getAll().forEach(trigger => {
-      try {
-        trigger.kill();
-      } catch (e) {
-        // Ignore errors
-      }
+  }
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.getAll().forEach(function(trigger) {
+      try { trigger.kill(); } catch(e) {}
     });
-  };
+    ScrollTrigger.clearMatchMedia();
+  }
+};
+
+// Run cleanup immediately when script loads
+window.__cleanupAnimations();
+
+// Track if we've already initialized to prevent double initialization
+let scriptsInitialized = false;
+
+// Wait for jQuery and dependencies to be available
+function initializeScripts() {
+  // Prevent double initialization
+  if (scriptsInitialized) return;
+  
+  if (typeof jQuery === 'undefined' || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    // Retry after 100ms if dependencies aren't ready
+    setTimeout(initializeScripts, 100);
+    return;
+  }
+  
+  scriptsInitialized = true;
+
+  try {
+    (function ($) {
+      // Gsap Plugin Register
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Clean up previous animations and SplitText instances on page navigation
+      const cleanup = () => {
+        window.__cleanupAnimations();
+      };
 
   // Clean up when script loads (in case of page navigation)
   cleanup();
@@ -35,17 +59,16 @@
   /* ========================================
      Navbar sticky Js
    ======================================== */
+  // DISABLED: ScrollTrigger pin conflicts with React's DOM management
+  // Using CSS-based sticky navbar instead
   if ($('.navbar').length) {
-    gsap.to(".navbar", {
-      scrollTrigger: {
-        trigger: ".navbar",
-        start: "top+=2 top",
-        endTrigger: "body",
-        end: "bottom 0",
-        pin: true,
-        pinSpacing: false,
-        toggleClass: { targets: ".navbar", className: "sticky" }, 
-      },
+    // Use scroll event for sticky class instead of ScrollTrigger pin
+    $(window).on('scroll', function() {
+      if ($(window).scrollTop() > 50) {
+        $('.navbar').addClass('sticky');
+      } else {
+        $('.navbar').removeClass('sticky');
+      }
     });
   }
 
@@ -79,21 +102,23 @@
   /* ========================================
    banner slider Js
   ======================================== */
-  const bannerSliderSwiper = new Swiper('.banner-slider', {
-    slidesPerView: 1,
-    loop: true,
-    pagination: false,
-    effect: "fade",
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    autoplay: false,
-    on: {
-      init: animateActiveSlide,
-      slideChangeTransitionStart: animateActiveSlide,
-    },
-  });
+  if (typeof Swiper !== 'undefined' && document.querySelector('.banner-slider')) {
+    const bannerSliderSwiper = new Swiper('.banner-slider', {
+      slidesPerView: 1,
+      loop: true,
+      pagination: false,
+      effect: "fade",
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      autoplay: false,
+      on: {
+        init: animateActiveSlide,
+        slideChangeTransitionStart: animateActiveSlide,
+      },
+    });
+  }
 
   function animateActiveSlide() {
     const activeSlide = document.querySelector('.swiper-slide-active');
@@ -137,7 +162,7 @@
       if (element) gsap.fromTo(element, from, to);
     });
 
-    if (elements.char_come) {
+    if (elements.char_come && typeof SplitText !== 'undefined') {
       const splitChar = new SplitText(elements.char_come, { type: "chars, words" });
       const staggerDuration = window.innerWidth < 768 ? 0.05 : 0.03;
 
@@ -161,256 +186,278 @@
   /* ========================================
     service slider Js
   ======================================== */
-  const servicesOneSwiper = new Swiper(".services-one-slid", {
-    slidesPerView: 3,
-    spaceBetween: 10,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  if (typeof Swiper !== 'undefined' && document.querySelector(".services-one-slid")) {
+    const servicesOneSwiper = new Swiper(".services-one-slid", {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        }
       },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      }
-    },
-  });
+    });
+  }
 
   /* ========================================
     case slider Js
   ======================================== */
-  const caseOneSwiper = new Swiper(".case-studies", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  if (typeof Swiper !== 'undefined' && document.querySelector(".case-studies")) {
+    const caseOneSwiper = new Swiper(".case-studies", {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
       },
-      768: {
-        slidesPerView: 2,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        }
       },
-      1024: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      }
-    },
-  });
+    });
+  }
 
   /* ========================================
     team slider Js
   ======================================== */
-  const teamOneSwiper = new Swiper(".team-slide", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    pagination: {
-      el: ".swiper-number",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".slid-btn-next",
-      prevEl: ".slid-btn-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  if (typeof Swiper !== 'undefined' && document.querySelector(".team-slide")) {
+    const teamOneSwiper = new Swiper(".team-slide", {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      pagination: {
+        el: ".swiper-number",
+        type: "fraction",
       },
-      768: {
-        slidesPerView: 2,
+      navigation: {
+        nextEl: ".slid-btn-next",
+        prevEl: ".slid-btn-prev",
       },
-      1024: {
-        slidesPerView: 2,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        }
       },
-      1200: {
-        slidesPerView: 3,
-      }
-    },
-  });
+    });
+  }
 
-  const teamThreeSwiper = new Swiper(".team-three-slide", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  if (typeof Swiper !== 'undefined' && document.querySelector(".team-three-slide")) {
+    const teamThreeSwiper = new Swiper(".team-three-slide", {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
+        }
       },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-      1200: {
-        slidesPerView: 4,
-      }
-    },
-  });
+    });
+  }
 
-  const teamFourSwiper = new Swiper(".team-four-slide", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  if (typeof Swiper !== 'undefined' && document.querySelector(".team-four-slide")) {
+    const teamFourSwiper = new Swiper(".team-four-slide", {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        }
       },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      }
-    },
-  });
-
-  /* ========================================
-    blog slider Js
-  ======================================== */
-  const blogOneSwiper = new Swiper(".blog-slide", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      }
-    },
-  });
+    });
+  }
 
   /* ========================================
     blog slider Js
   ======================================== */
-  const blogTwoSwiper = new Swiper(".blogs-two-slide", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  if (typeof Swiper !== 'undefined' && document.querySelector(".blog-slide")) {
+    const blogOneSwiper = new Swiper(".blog-slide", {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        }
       },
-      768: {
-        slidesPerView: 2,
+    });
+  }
+
+  /* ========================================
+    blog slider Js
+  ======================================== */
+  if (typeof Swiper !== 'undefined' && document.querySelector(".blogs-two-slide")) {
+    const blogTwoSwiper = new Swiper(".blogs-two-slide", {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        }
       },
-      1024: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      }
-    },
-  });
+    });
+  }
 
   /* ========================================
     feedback slider Js
   ======================================== */
-  const feedbackOneSwiper = new Swiper('.feedback-slide', {
-    slidesPerView: 1,
-    loop: true,
-    pagination: false,
-    spaceBetween: 24,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    breakpoints: {
-      '1200': {
-        slidesPerView: 2,
+  if (typeof Swiper !== 'undefined' && document.querySelector('.feedback-slide')) {
+    const feedbackOneSwiper = new Swiper('.feedback-slide', {
+      slidesPerView: 1,
+      loop: true,
+      pagination: false,
+      spaceBetween: 24,
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
       },
-      '991': {
-        slidesPerView: 2,
+      breakpoints: {
+        '1200': {
+          slidesPerView: 2,
+        },
+        '991': {
+          slidesPerView: 2,
+        },
+        '0': {
+          slidesPerView: 1,
+        }
       },
-      '0': {
-        slidesPerView: 1,
-      }
-    },
 
-  });
+    });
+  }
 
   /* ========================================
     feedback two slider Js
   ======================================== */
-  const feedbackTwoSwiper = new Swiper('.feedback-two-slide', {
-    slidesPerView: 1,
-    loop: true,
-    spaceBetween: 24,
-    speed: 700,
-    pagination: {
-      el: ".swiper-number",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".slid-btn-next",
-      prevEl: ".slid-btn-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 2,
+  if (typeof Swiper !== 'undefined' && document.querySelector('.feedback-two-slide')) {
+    const feedbackTwoSwiper = new Swiper('.feedback-two-slide', {
+      slidesPerView: 1,
+      loop: true,
+      spaceBetween: 24,
+      speed: 700,
+      pagination: {
+        el: ".swiper-number",
+        type: "fraction",
       },
-      0: {
-        slidesPerView: 1,
+      navigation: {
+        nextEl: ".slid-btn-next",
+        prevEl: ".slid-btn-prev",
       },
-    },
-  });
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        1200: {
+          slidesPerView: 2,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
+  }
 
   /* ========================================
     Brand slider Js
   ======================================== */
-  const brandSwiper = new Swiper('.brand-active-slid', {
-    loop: true,
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    allowTouchMove: false,
-    spaceBetween: 30,
-    speed: 4000,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-    },
-  });
+  if (typeof Swiper !== 'undefined' && document.querySelector('.brand-active-slid')) {
+    const brandSwiper = new Swiper('.brand-active-slid', {
+      loop: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      allowTouchMove: false,
+      spaceBetween: 30,
+      speed: 4000,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+    });
+  }
 
   /* ========================================
     team two slider Js
   ======================================== */
-  const teamTwoSwiper = new Swiper(".team-two-slide", {
-    slidesPerView: 3,
-    spaceBetween: 24,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  if (typeof Swiper !== 'undefined' && document.querySelector(".team-two-slide")) {
+    const teamTwoSwiper = new Swiper(".team-two-slide", {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
+        }
       },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-      1200: {
-        slidesPerView: 4,
-      }
-    },
-  });
+    });
+  }
 
 
   /* ========================================
@@ -732,38 +779,40 @@
    ======================================== */
   if ($('.progress-wrap').length) {
     const progressPath = document.querySelector('.progress-wrap path');
-    const pathLength = progressPath.getTotalLength();
+    if (progressPath) {
+      const pathLength = progressPath.getTotalLength();
 
-    // Set up the initial stroke styles
-    progressPath.style.transition = 'none';
-    progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
-    progressPath.style.strokeDashoffset = pathLength;
-    progressPath.getBoundingClientRect();
+      // Set up the initial stroke styles
+      progressPath.style.transition = 'none';
+      progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      progressPath.style.strokeDashoffset = pathLength;
+      progressPath.getBoundingClientRect();
 
-    // Set transition for stroke-dashoffset
-    progressPath.style.transition = 'stroke-dashoffset 10ms linear';
+      // Set transition for stroke-dashoffset
+      progressPath.style.transition = 'stroke-dashoffset 10ms linear';
 
-    const updateProgress = () => {
-      const scroll = $(window).scrollTop();
-      const height = $(document).height() - $(window).height();
-      const progress = pathLength - (scroll * pathLength / height);
-      progressPath.style.strokeDashoffset = progress;
-    };
+      const updateProgress = () => {
+        const scroll = $(window).scrollTop();
+        const height = $(document).height() - $(window).height();
+        const progress = pathLength - (scroll * pathLength / height);
+        progressPath.style.strokeDashoffset = progress;
+      };
 
-    updateProgress();
-    $(window).on('scroll', updateProgress);
+      updateProgress();
+      $(window).on('scroll', updateProgress);
 
-    const offset = 50;
-    const duration = 550;
+      const offset = 50;
+      const duration = 550;
 
-    $(window).on('scroll', () => {
-      $('.progress-wrap').toggleClass('active-progress', $(window).scrollTop() > offset);
-    });
+      $(window).on('scroll', () => {
+        $('.progress-wrap').toggleClass('active-progress', $(window).scrollTop() > offset);
+      });
 
-    $('.progress-wrap').on('click', (event) => {
-      event.preventDefault();
-      $('html, body').animate({ scrollTop: 0 }, duration);
-    });
+      $('.progress-wrap').on('click', (event) => {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, duration);
+      });
+    }
   }
   // progress bar animate numbers
   if ($('.skill-container__item').length) {
@@ -808,6 +857,9 @@
     if (navPills) {
       const links = navPills.querySelectorAll('.nav-link');
       const indicator = navPills.querySelector('.nav-indicator');
+      if (!indicator) {
+        return;
+      }
 
       function updateIndicator(el) {
         if (el) {
@@ -834,65 +886,69 @@
     return bg;
   });
 
-  $('.video-play-btn').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-    fixedContentPos: false,
-    iframe: {
-      patterns: {
-        youtube: {
-          index: 'youtube.com/',
-          id: function (url) {
-            if (url.indexOf('shorts/') !== -1) {
-              return url.split('shorts/')[1].split(/[?&]/)[0];
-            }
-            if (url.indexOf('v=') !== -1) {
-              return url.split('v=')[1].split(/[?&]/)[0];
-            }
-            if (url.indexOf('embed/') !== -1) {
-              return url.split('embed/')[1].split(/[?&]/)[0];
-            }
-            return null;
+  if ($.fn && typeof $.fn.magnificPopup === 'function') {
+    $('.video-play-btn').magnificPopup({
+      disableOn: 700,
+      type: 'iframe',
+      mainClass: 'mfp-fade',
+      removalDelay: 160,
+      preloader: false,
+      fixedContentPos: false,
+      iframe: {
+        patterns: {
+          youtube: {
+            index: 'youtube.com/',
+            id: function (url) {
+              if (url.indexOf('shorts/') !== -1) {
+                return url.split('shorts/')[1].split(/[?&]/)[0];
+              }
+              if (url.indexOf('v=') !== -1) {
+                return url.split('v=')[1].split(/[?&]/)[0];
+              }
+              if (url.indexOf('embed/') !== -1) {
+                return url.split('embed/')[1].split(/[?&]/)[0];
+              }
+              return null;
+            },
+            src: 'https://www.youtube.com/embed/%id%?autoplay=1'
           },
-          src: 'https://www.youtube.com/embed/%id%?autoplay=1'
-        },
-        youtu_be: {
-          index: 'youtu.be/',
-          id: function (url) {
-            return url.split('youtu.be/')[1].split(/[?&]/)[0];
-          },
-          src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+          youtu_be: {
+            index: 'youtu.be/',
+            id: function (url) {
+              return url.split('youtu.be/')[1].split(/[?&]/)[0];
+            },
+            src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+          }
         }
       }
-    }
-  });
+    });
+  }
 
   $('.services-one-box').hover(function () {
     $('.services-one-box').removeClass('active');
     $(this).addClass('active');
   });
 
-  const scrollReveal = ScrollReveal({
-    origin: 'top', distance: '60px', duration: 1300, delay: 100, mobile: false,
-  })
-  scrollReveal.reveal('.top-reveal', {
-    delay: 60, distance: '60px', origin: 'top', interval: 100, mobile: false,
-  })
-  scrollReveal.reveal('.left-reveal', {
-    delay: 60, origin: 'left', interval: 100, mobile: false,
-  })
-  scrollReveal.reveal('.right-reveal', {
-    delay: 60, origin: 'right', interval: 100, mobile: false,
-  })
-  scrollReveal.reveal('.bottom-reveal', {
-    delay: 60, origin: 'bottom', interval: 100, mobile: false,
-  })
-  scrollReveal.reveal('.scaleUp', {
-    scale: 0.85, mobile: false,
-  })
+  if (typeof ScrollReveal !== 'undefined') {
+    const scrollReveal = ScrollReveal({
+      origin: 'top', distance: '60px', duration: 1300, delay: 100, mobile: false,
+    })
+    scrollReveal.reveal('.top-reveal', {
+      delay: 60, distance: '60px', origin: 'top', interval: 100, mobile: false,
+    })
+    scrollReveal.reveal('.left-reveal', {
+      delay: 60, origin: 'left', interval: 100, mobile: false,
+    })
+    scrollReveal.reveal('.right-reveal', {
+      delay: 60, origin: 'right', interval: 100, mobile: false,
+    })
+    scrollReveal.reveal('.bottom-reveal', {
+      delay: 60, origin: 'bottom', interval: 100, mobile: false,
+    })
+    scrollReveal.reveal('.scaleUp', {
+      scale: 0.85, mobile: false,
+    })
+  }
 
   /* ========================================
       Preloader Js
@@ -917,4 +973,40 @@
   // Fallback timeout (3 seconds) in case load event doesn't fire
   setTimeout(hidePreloader, 3000);
 
-})(jQuery);
+    })(jQuery);
+  } catch (error) {
+    console.error('Script initialization error:', error);
+  }
+}
+
+// Wait for React hydration to complete before initializing
+// This prevents hydration mismatch errors
+function waitForHydration() {
+  // Check if we're in a browser environment
+  if (typeof window === 'undefined') return;
+  
+  // Use requestIdleCallback or setTimeout to wait for React hydration
+  const initAfterHydration = () => {
+    // Additional delay to ensure React has fully hydrated
+    setTimeout(() => {
+      if (document.readyState === 'complete') {
+        initializeScripts();
+      } else {
+        window.addEventListener('load', initializeScripts, { once: true });
+      }
+    }, 100);
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initAfterHydration, { timeout: 1000 });
+  } else {
+    setTimeout(initAfterHydration, 200);
+  }
+}
+
+// Initialize only after DOM is ready and hydration is likely complete
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', waitForHydration);
+} else {
+  waitForHydration();
+}

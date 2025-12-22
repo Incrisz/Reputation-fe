@@ -3,9 +3,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+
+// Declare global cleanup function type
+declare global {
+  interface Window {
+    __cleanupAnimations?: () => void;
+  }
+}
 
 export default function Navbar() {
   const pathname = usePathname();
+
+  // Clean up animations when pathname changes
+  useEffect(() => {
+    // Cleanup function runs before navigation
+    return () => {
+      if (typeof window !== 'undefined' && window.__cleanupAnimations) {
+        window.__cleanupAnimations();
+      }
+    };
+  }, [pathname]);
 
   const navLinks = [
     { href: "/", label: "Home" },
