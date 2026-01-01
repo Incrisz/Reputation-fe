@@ -5,9 +5,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | BizVisibility AI - AI-Powered Online Visibility Solutions",
+  title: "About Reputation AI | Online Reputation Management Platform",
   description:
-    "Learn about BizVisibility AI and our mission to help businesses improve their online presence through AI-powered visibility scoring and intelligent recommendations.",
+    "Learn about Reputation AI, the leading platform for comprehensive online reputation management. We combine visibility intelligence, sentiment analysis, reputation scoring, and strategic guidance to help businesses understand and improve their digital reputation.",
 };
 
 export default function AboutPage() {
@@ -15,23 +15,23 @@ export default function AboutPage() {
     {
       image: "/images/services/servicesThree1.jpg",
       icon: "/images/icons/sth1.png",
-      title: "Website Performance Analysis",
+      title: "Visibility & Presence Intelligence",
       description:
-        "Our AI evaluates your website's speed, SEO health, mobile optimization, and user experience to identify areas for improvement.",
+        "Our AI identifies where your business appears across the web, understanding your digital footprint and online presence across all channels.",
     },
     {
       image: "/images/services/servicesThree2.jpg",
       icon: "/images/icons/sth2.png",
-      title: "Search Visibility Scoring",
+      title: "Sentiment & Narrative Intelligence",
       description:
-        "Track how easily customers can find your business across Google, Bing, and other search engines with intelligent visibility rankings.",
+        "AI analyzes what's being said about you - the sentiment (positive/negative/neutral) and key narrative themes that define your reputation.",
     },
     {
       image: "/images/services/servicesThree3.jpg",
       icon: "/images/icons/sth3.png",
-      title: "Social Media Evaluation",
+      title: "Reputation Scoring & Strategy",
       description:
-        "Get AI-powered insights on your social media presence across all major platforms and learn how to improve engagement and reach.",
+        "AI calculates your reputation score and provides strategic recommendations for improving how you're perceived and managing your digital reputation.",
     },
   ];
 
@@ -45,14 +45,12 @@ export default function AboutPage() {
           <div className="row row-gap-5 justify-content-between">
             <div className="col-xl-6 align-self-center">
               <div className="banner-three-section__content">
-                <span className="title-animation">AI-POWERED VISIBILITY</span>
+                <span className="title-animation">COMPREHENSIVE REPUTATION MANAGEMENT</span>
                 <h1 className="title-animation">
-                  Transform Your Online Presence with Intelligent Insights
+                  Understand and Improve Your Digital Reputation with AI
                 </h1>
                 <p className="right-reveal">
-                  BizVisibility AI uses cutting-edge artificial intelligence to evaluate your
-                  business&apos;s online visibility and provide actionable recommendations to help you
-                  grow digitally.
+                  Reputation AI combines four intelligent systems to evaluate your complete online reputation: visibility intelligence, sentiment analysis, reputation scoring, and strategic guidance. We help businesses understand how they appear online and provide actionable recommendations to enhance their digital standing.
                 </p>
                 <div className="banner-two-buttons d-flex flex-wrap align-items-center gap-4">
                   <div className="right-reveal">
@@ -106,25 +104,22 @@ export default function AboutPage() {
             <div className="col-lg-6 align-self-center">
               <div className="about-text ms-xl-3">
                 <div className="section-header-three">
-                  <h6 className="right-reveal">About BizVisibility AI</h6>
+                  <h6 className="right-reveal">About Reputation AI</h6>
                   <h2 className="title-animation">
-                    Making Online Visibility Simple and Actionable for Every Business
+                    Comprehensive Digital Reputation Management for Every Business
                   </h2>
                   <p className="right-reveal">
-                    BizVisibility AI was created to solve a critical problem: businesses struggle to
-                    understand and improve their online presence. Our AI-powered platform evaluates
-                    your website, search rankings, and social media to give you a clear visibility
-                    score and specific recommendations for growth.
+                    Reputation AI was created to address the critical challenge facing modern businesses: understanding and managing your digital reputation. Our AI-powered platform evaluates your visibility, analyzes sentiment around your brand, scores your reputation, and provides strategic guidance on how to improve your digital standing.
                   </p>
                 </div>
                 <ul className="about-list">
                   {[
-                    "AI-Powered Website Analysis",
-                    "Search Engine Visibility Scoring",
-                    "Social Platform Evaluation",
-                    "Real-Time Progress Tracking",
-                    "Intelligent Recommendations",
-                    "Comprehensive Visibility Reports",
+                    "Visibility Intelligence Across All Channels",
+                    "Real-Time Sentiment & Narrative Analysis",
+                    "AI-Powered Reputation Scoring",
+                    "Strategic Reputation Recommendations",
+                    "Online Mention Tracking",
+                    "Comprehensive Digital Standing Reports",
                   ].map((item, index) => (
                     <li key={index} className="right-reveal">
                       {item}
@@ -132,9 +127,7 @@ export default function AboutPage() {
                   ))}
                 </ul>
                 <p className="right-reveal">
-                  Our mission is to empower businesses of all sizes to take control of their
-                  digital presence. We believe that understanding your online visibility shouldn&apos;t
-                  require a team of experts—just smart AI and clear, actionable insights.
+                  Our mission is to empower businesses of all sizes to take control of their digital reputation. We believe that understanding your online standing shouldn&apos;t require a team of experts—just smart AI and clear, actionable insights.
                 </p>
               </div>
             </div>

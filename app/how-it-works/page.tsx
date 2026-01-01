@@ -5,9 +5,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How It Works | BizVisibility AI - AI-Powered Visibility Scoring Process",
+  title: "How Reputation AI Works | Online Visibility & Reputation Scoring",
   description:
-    "Discover how BizVisibility AI analyzes your website, search rankings, and social platforms to provide intelligent visibility scores and actionable recommendations.",
+    "Discover how Reputation AI analyzes your online presence, sentiment, and reputation to provide intelligent scoring and strategic recommendations for improving your digital reputation.",
 };
 
 export default function HowItWorksPage() {
@@ -15,50 +15,50 @@ export default function HowItWorksPage() {
     {
       image: "/images/services/servicesThree1.jpg",
       icon: "/images/icons/sth1.png",
-      title: "Step 1: Enter Your Business Info",
+      title: "Step 1: Scanning",
       description:
-        "Provide your website URL and social profiles and our AI begins scanning immediately.",
+        "Reputation AI scans the web to identify where your business appears and what's being said about you across websites, reviews, social media, and online mentions.",
     },
     {
       image: "/images/services/servicesThree2.jpg",
       icon: "/images/icons/sth2.png",
-      title: "Step 2: Get Your AI Score",
+      title: "Step 2: Analysis",
       description:
-        "In minutes, receive a comprehensive visibility score with detailed insights on your website, search presence, and social platforms.",
+        "Advanced AI analyzes sentiment (positive, negative, neutral), identifies narrative themes, and evaluates your online reputation across all sources found.",
     },
     {
       image: "/images/services/servicesThree3.jpg",
       icon: "/images/icons/sth3.png",
-      title: "Step 3: Follow Smart Recommendations",
+      title: "Step 3: Strategic Insight",
       description:
-        "Get prioritized, AI-generated action items that tell you exactly what to improve for better online visibility.",
+        "You receive a reputation score, sentiment analysis, key findings, and AI-generated strategic recommendations for improving your digital reputation.",
     },
   ];
 
   const features = [
     {
       icon: "flaticon-consultancy",
-      title: "Website Analysis",
+      title: "Web Scanning",
       description:
-        "AI evaluates your website's speed, SEO health, mobile optimization, and user experience.",
+        "Reputation AI scans the entire web to find where your business appears and what's being said about you online.",
     },
     {
       icon: "flaticon-innovation",
-      title: "Search Visibility",
+      title: "Sentiment Analysis",
       description:
-        "Track how easily customers can find your business across Google, Bing, and other search engines.",
+        "AI understands the sentiment behind mentions and reviews - whether people are saying positive, negative, or neutral things about your business.",
     },
     {
       icon: "flaticon-research",
-      title: "Social Presence",
+      title: "Narrative Intelligence",
       description:
-        "Get insights on your social media presence across all major platforms and learn how to improve.",
+        "AI identifies common themes, patterns, and narratives in what's said about you to understand how you're perceived.",
     },
     {
       icon: "flaticon-solution",
-      title: "Smart Recommendations",
+      title: "Reputation Scoring & Strategy",
       description:
-        "AI-generated action items prioritized by impact to help you improve visibility quickly.",
+        "AI calculates your reputation score and provides strategic recommendations for improving how you're perceived online.",
     },
   ];
 
@@ -72,11 +72,10 @@ export default function HowItWorksPage() {
           <div className="row justify-content-between align-items-center">
             <div className="col-lg-6">
               <div className="banner-two-section__content">
-                <h6 className="title-animation">Visibility Made Simple</h6>
-                <h1 className="title-animation">How BizVisibility AI Works</h1>
+                <h6 className="title-animation">How It Works</h6>
+                <h1 className="title-animation">How Reputation AI Analyzes Your Reputation</h1>
                 <p className="right-reveal">
-                  We continuously scan your website, listings, search results, and social profiles,
-                  then translate the findings into a clear score with step-by-step recommendations.
+                  Reputation AI uses three core thinking systems to understand your digital reputation: scanning the web to find mentions, analyzing sentiment and narratives to understand perception, and providing strategic guidance to improve your standing.
                 </p>
                 <div className="banner-two-buttons">
                   <div className="right-reveal">
@@ -113,7 +112,7 @@ export default function HowItWorksPage() {
             <div className="col-lg-12 text-center">
               <div className="section-header-three">
                 <h6 className="top-reveal">HOW IT WORKS</h6>
-                <h2 className="title-animation">Get Your Visibility Score in 3 Simple Steps</h2>
+                <h2 className="title-animation">Three-Step Reputation Analysis Process</h2>
               </div>
             </div>
           </div>
@@ -154,7 +153,7 @@ export default function HowItWorksPage() {
               <div className="section-header-two">
                 <h6 className="right-reveal">What We Analyze</h6>
                 <h2 className="title-animation">
-                  Comprehensive <span>Visibility Analysis</span>
+                  How Reputation AI <span>Thinks</span>
                 </h2>
               </div>
             </div>
@@ -186,11 +185,10 @@ export default function HowItWorksPage() {
             <div className="col-lg-8 text-center">
               <div className="section-header-two">
                 <h2 className="title-animation">
-                  Ready to Boost Your <span>Online Visibility?</span>
+                  Ready to Understand Your <span>Digital Reputation?</span>
                 </h2>
                 <p className="mt-3">
-                  Start your free scan today and see exactly where you stand online. Get actionable
-                  recommendations to improve your visibility and attract more customers.
+                  Get a comprehensive reputation analysis today. Reputation AI scans the web, analyzes what's being said about you, and provides strategic recommendations to improve your digital reputation.
                 </p>
                 <div className="mt-4">
                 </div>

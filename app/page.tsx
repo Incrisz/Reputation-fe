@@ -21,16 +21,14 @@ export default function Home() {
             <div className="col-xl-6 col-lg-7 align-self-center">
               <div className="banner-two-section__content">
                 <h6 className="title-animation">
-                  Online Business
+                  AI-Powered Reputation Intelligence
                   <i className="fa-solid fa-arrow-right-long"></i>
                 </h6>
                 <h1 className="title-animation">
-                  AI-Powered <span>Online Visibility Scoring</span>
+                  Reputation AI: <span>Know What People Say About Your Business</span>
                 </h1>
                 <p className="right-reveal">
-                  Our AI-powered platform evaluates how visible your business is online, from your
-                  website to search results and social platforms. Get intelligent, easy-to-understand
-                  recommendations to help you grow digitally.
+                  Reputation AI helps you understand what people are saying about your business online and gives you actionable steps to improve it. In seconds, get a complete picture of your online reputation with sentiment analysis, key topics, and personalized recommendations.
                 </p>
                 <div className="banner-two-buttons">
                   <div className="right-reveal">
@@ -99,18 +97,16 @@ export default function Home() {
           <div className="row">
             <div className="col-xl-6 col-lg-6 align-self-center">
               <div className="section-header-two">
-                <h6 className="right-reveal">AI-Powered Features</h6>
+                <h6 className="right-reveal">Reputation Intelligence</h6>
                 <h2 className="title-animation">
-                  Intelligent <span>Visibility Analysis</span>
+                  How Reputation AI <span>Works</span>
                 </h2>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 align-self-center">
               <div className="section-header-two right-reveal">
                 <p>
-                  Our AI evaluates your website, search engine rankings, and social media platforms
-                  to score your online visibility. Get intelligent, actionable insights that tell
-                  you exactly what to improve to attract more customers.
+                  Reputation AI combines advanced web scanning with intelligent analysis to give you a complete understanding of your online reputation. We monitor review sites, news, social media, forums, and more to show you exactly what's being said about your business.
                 </p>
               </div>
             </div>
@@ -119,27 +115,27 @@ export default function Home() {
             {[
               {
                 icon: "flaticon-consultancy",
-                title: "AI Website Scoring",
+                title: "Complete Web Coverage",
                 description:
-                  "AI analyzes your website's performance, SEO health, and presentation quality with intelligent scoring.",
+                  "We scan the entire internet including review sites (Google, Yelp), news sources, social media, blogs, and forums to find every mention of your business.",
               },
               {
                 icon: "flaticon-innovation",
-                title: "Search Visibility",
+                title: "Sentiment Analysis",
                 description:
-                  "AI evaluates how easily customers can find your business in search results and ranks your visibility.",
+                  "Our AI analyzes each mention to determine if it's positive, negative, or neutral. We understand context, so we get the nuance of what people really think.",
               },
               {
                 icon: "flaticon-research",
-                title: "Social Platform Evaluation",
+                title: "Reputation Scoring",
                 description:
-                  "AI scores your social media presence and tells you how well you're presented across platforms.",
+                  "Get a clear reputation score (0-100) based on all mentions we find. See the breakdown of positive, negative, and neutral sentiment at a glance.",
               },
               {
                 icon: "flaticon-solution",
-                title: "Smart Recommendations",
+                title: "Actionable Recommendations",
                 description:
-                  "AI tells you exactly what to improve to get better visibility and attract more customers.",
+                  "We don't just show you data. We tell you specifically what to do to improve your reputation based on the real mentions and patterns we discovered.",
               },
             ].map((service, index) => (
               <div key={index} className="col-xl-3 col-lg-6 col-md-6 top-reveal">
@@ -170,7 +166,7 @@ export default function Home() {
             <div className="col-lg-7">
               <div className="section-header-three text-center">
                 <h6 className="top-reveal">HOW IT WORKS</h6>
-                <h2 className="title-animation">Get Your Visibility Score in 3 Simple Steps</h2>
+                <h2 className="title-animation">Get Your Reputation Score in 3 Simple Steps</h2>
               </div>
             </div>
           </div>
@@ -179,23 +175,23 @@ export default function Home() {
               {
                 image: "/images/services/servicesThree1.jpg",
                 icon: "/images/icons/sth1.png",
-                title: "Step 1: Enter Your Business Info",
+                title: "Step 1: Tell Us About Your Business",
                 description:
-                  "Simply provide your business website URL and social media profiles. Our AI will start scanning immediately.",
+                  "Simply provide your business name and website, or phone number and location. That's all we need to get started scanning the web.",
               },
               {
                 image: "/images/services/servicesThree2.jpg",
                 icon: "/images/icons/sth2.png",
-                title: "Step 2: Get Your AI Score",
+                title: "Step 2: We Scan the Web",
                 description:
-                  "In minutes, receive a comprehensive visibility score with detailed insights on your website, search presence, and social platforms.",
+                  "Our AI scans review sites, news, social media, blogs, and forums in seconds. We find every mention of your business and analyze the sentiment.",
               },
               {
                 image: "/images/services/servicesThree3.jpg",
                 icon: "/images/icons/sth3.png",
-                title: "Step 3: Follow Smart Recommendations",
+                title: "Step 3: Get Your Insights & Recommendations",
                 description:
-                  "Get prioritized, AI-generated action items that tell you exactly what to improve for better online visibility and more customers.",
+                  "See your reputation score, sentiment breakdown, key topics people discuss, and specific recommendations to improve your online reputation.",
               },
             ].map((step, index) => (
               <div key={index} className="col-xl-4 col-lg-6 col-md-6 top-reveal">
@@ -251,23 +247,21 @@ export default function Home() {
                 <div className="section-header-two">
                   <h6 className="right-reveal">About Us</h6>
                   <h2 className="title-animation">
-                    AI-Driven
-                    <span>Visibility Scoring</span>
+                    Your Complete
+                    <span>Reputation Dashboard</span>
                   </h2>
                   <p className="right-reveal">
-                    Our AI-powered platform checks how easy it is to find your business online and
-                    how well it is presented. It scores your business and tells you exactly what to
-                    improve to get better visibility and more customers.
+                    Our AI-powered platform scans the entire web for mentions of your business and analyzes what people are saying. Get a clear reputation score, see sentiment breakdown, identify key topics, and receive actionable recommendations to improve your online reputation.
                   </p>
                 </div>
                 <ul className="about-list">
                   {[
-                    "AI-Powered Website Scoring",
-                    "Intelligent Search Visibility Ranking",
-                    "Social Platform Presence Evaluation",
-                    "Automated Visibility Scoring",
-                    "AI-Generated Smart Recommendations",
-                    "Real-Time Progress Tracking",
+                    "Complete Web Scanning",
+                    "Sentiment Analysis & Breakdown",
+                    "Reputation Scoring (0-100)",
+                    "Key Topics Identification",
+                    "Direct Links to Mentions",
+                    "Actionable Recommendations",
                   ].map((item, index) => (
                     <li key={index} className="right-reveal">
                       {item}
@@ -275,8 +269,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <p className="right-reveal">
-                  Our AI evaluates every aspect of your online presence and provides intelligent
-                  recommendations to help you grow digitally and attract more customers.
+                  Reputation AI helps you understand what's being said about your business across the entire internet and tells you exactly how to improve it.
                 </p>
               </div>
             </div>
@@ -293,13 +286,11 @@ export default function Home() {
                 <div className="section-header-two">
                   <h6 className="right-reveal">How It Works</h6>
                   <h2 className="title-animation">
-                    AI-Powered Process for
-                    <span>Smart Results</span>
+                    AI-Powered Reputation
+                    <span>Analysis & Insights</span>
                   </h2>
                   <p className="right-reveal">
-                    Our AI analyzes your entire online presence in minutes. It checks your website,
-                    search rankings, and social platforms to give you an intelligent visibility
-                    score with specific recommendations for improvement.
+                    Our AI analyzes what people are saying about your business across the entire web. In seconds, you get a clear reputation score, sentiment analysis, key topics people discuss, and specific recommendations to improve your online reputation.
                   </p>
                 </div>
                 <div className="work-list">
@@ -308,10 +299,9 @@ export default function Home() {
                       <i className="flaticon-evaluation"></i>
                     </div>
                     <div className="text">
-                      <h5>AI Evaluation</h5>
+                      <h5>Web Scanning & Analysis</h5>
                       <p>
-                        Our AI scans your website, search engine presence, and social platforms to
-                        evaluate how easy it is to find your business and how well it&apos;s presented.
+                        Our AI scans review sites, news, social media, blogs, and forums to find what people are saying about your business. We analyze each mention for sentiment and context.
                       </p>
                     </div>
                   </div>
@@ -320,10 +310,9 @@ export default function Home() {
                       <i className="flaticon-team-work"></i>
                     </div>
                     <div className="text">
-                      <h5>Intelligent Scoring</h5>
+                      <h5>Reputation Insights & Recommendations</h5>
                       <p>
-                        Get an AI-generated visibility score with intelligent recommendations that
-                        tell you exactly what to improve for better results.
+                        Get your reputation score, see what percentage of mentions are positive, negative, or neutral, identify key topics, and receive actionable steps to improve.
                       </p>
                     </div>
                   </div>
@@ -365,38 +354,20 @@ export default function Home() {
                 <div className="section-header-two">
                   <h6 className="right-reveal">Why Choose Us?</h6>
                   <h2 className="title-animation">
-                    AI-Powered Intelligence for
-                    <span>Digital Growth</span>
+                    Reputation Intelligence for
+                    <span>Any Business</span>
                   </h2>
                   <p className="right-reveal">
-                    Our AI-powered platform doesn&apos;t just show you data—it intelligently evaluates
-                    your online presence and tells you exactly what to improve. Get smart, actionable
-                    recommendations to boost visibility and attract more customers.
+                    Whether you're a small business, startup, marketing team, or enterprise, Reputation AI gives you a clear understanding of what people are saying about your business online and tells you exactly how to improve it.
                   </p>
                 </div>
                 <div className="skill-container row row-gap-4 row-gap-lg-5 mt-5">
                   <div className="col-lg-6 right-reveal">
                     <div className="skill-container__item">
-                      <div className="percentage" data-target="80">
-                        80%
-                      </div>
-                      <h6>Online Visibility Boost</h6>
-                      <div className="progress">
-                        <div
-                          className="progress-bar progress-bar-striped bg-danger"
-                          role="progressbar"
-                          aria-valuenow={80}
-                          style={{ width: "80%" }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 right-reveal">
-                    <div className="skill-container__item">
                       <div className="percentage" data-target="90">
                         90%
                       </div>
-                      <h6>Customer Satisfaction</h6>
+                      <h6>Reputation Coverage</h6>
                       <div className="progress">
                         <div
                           className="progress-bar progress-bar-striped bg-danger"
@@ -408,10 +379,26 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="col-lg-6 right-reveal">
+                    <div className="skill-container__item">
+                      <div className="percentage" data-target="95">
+                        95%
+                      </div>
+                      <h6>Sentiment Accuracy</h6>
+                      <div className="progress">
+                        <div
+                          className="progress-bar progress-bar-striped bg-danger"
+                          role="progressbar"
+                          aria-valuenow={95}
+                          style={{ width: "95%" }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 right-reveal">
                     <div className="choose-item">
                       <i className="flaticon-customer-support"></i>
                       <div className="text">
-                        <h6>Platform Monitoring</h6>
+                        <h6>Support Available</h6>
                         <div className="support-title">24/7</div>
                       </div>
                     </div>
@@ -420,8 +407,8 @@ export default function Home() {
                     <div className="choose-item">
                       <i className="flaticon-economic-growth"></i>
                       <div className="text">
-                        <h6>Reputation Growth</h6>
-                        <div className="support-title">95%</div>
+                        <h6>Web Coverage</h6>
+                        <div className="support-title">Complete</div>
                       </div>
                     </div>
                   </div>
@@ -438,20 +425,18 @@ export default function Home() {
           <div className="row">
             <div className="col-lg-6">
               <div className="section-header-two">
-                <h6 className="right-reveal">Our Testimonial</h6>
+                <h6 className="right-reveal">What Our Users Say</h6>
                 <h2 className="title-animation">
-                  We are Very Glad to Know
+                  Real Stories from
                   <br />
-                  <span>Our Client Reviews</span>
+                  <span>Reputation AI Users</span>
                 </h2>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="section-header-two right-reveal">
                 <p>
-                  See how businesses like yours are using BizVisibility AI to improve their online
-                  presence. Our AI-powered platform has helped hundreds of businesses boost their
-                  visibility and attract more customers.
+                  See how businesses like yours are using Reputation AI to understand what people say about them online and take action. From discovering hidden complaints to improving their reputation, our users are taking control.
                 </p>
               </div>
             </div>
@@ -462,28 +447,28 @@ export default function Home() {
                 <div className="swiper-wrapper">
                   {[
                     {
-                      name: "Walter J. Anthony",
-                      role: "Founder, CEO",
+                      name: "Sarah, Restaurant Owner",
+                      role: "Hospitality",
                       image: "/images/user/1.jpg",
                       quote:
-                        "BizVisibility AI showed us exactly where we were losing customers online. Within 3 months, our search visibility improved by 85%!",
+                        "I discovered a serious complaint on Reddit that was affecting our business. Without Reputation AI, I would never have seen it. Fixed it immediately!",
                       rating: 5,
                     },
                     {
-                      name: "Emily R. Johnson",
-                      role: "Marketing Director",
+                      name: "Marcus, E-commerce Owner",
+                      role: "Online Retail",
                       image: "/images/user/2.jpg",
                       quote:
-                        "The AI recommendations were spot-on! We fixed our website issues and our online leads doubled in just 6 weeks.",
-                      rating: 4.5,
+                        "Our reputation score improved from 62 to 81 after we focused on the recommendations. They were spot-on and easy to implement.",
+                      rating: 5,
                     },
                     {
-                      name: "James L. Carter",
-                      role: "Tech Consultant",
+                      name: "Jennifer, Marketing Manager",
+                      role: "Marketing",
                       image: "/images/user/3.jpg",
                       quote:
-                        "Finally, a tool that makes online visibility simple! The scoring system helped us prioritize what to fix first. Game changer for small businesses.",
-                      rating: 5,
+                        "Instead of spending 2 hours per week searching for mentions, I get everything in a clean dashboard. Reputation AI saved us so much time.",
+                      rating: 4.5,
                     },
                   ].map((testimonial, index) => (
                     <div key={index} className="swiper-slide">
@@ -546,30 +531,30 @@ export default function Home() {
                   <h2 className="title-animation">
                     Common Questions About
                     <br />
-                    <span>BizVisibility AI</span>
+                    <span>Reputation AI</span>
                   </h2>
                 </div>
                 <div className="accordion mt-60" id="greatSolutions">
                   {[
                     {
                       id: "collapseOne",
-                      question: "How does BizVisibility AI work?",
+                      question: "How does Reputation AI work?",
                       answer:
-                        "Our AI scans your website, search engine presence, and social media platforms to evaluate your online visibility. It then generates a comprehensive score and provides intelligent, actionable recommendations to improve your digital presence.",
+                        "Our AI scans the entire web including review sites, news, social media, blogs, and forums for mentions of your business. We analyze each mention for sentiment (positive, negative, neutral) and identify key topics. You get a reputation score and actionable recommendations in seconds.",
                       show: true,
                     },
                     {
                       id: "collapseTwo",
-                      question: "What platforms does the AI analyze?",
+                      question: "What sources does Reputation AI analyze?",
                       answer:
-                        "BizVisibility AI analyzes your website performance, search engine rankings (Google, Bing, etc.), and your presence across major social media platforms including Facebook, Instagram, LinkedIn, Twitter, and more.",
+                        "Reputation AI analyzes mentions across review platforms (Google Reviews, Yelp, Trustpilot), news sources, social media platforms (Facebook, Twitter, Instagram, LinkedIn), blogs, forums, and more. We focus on the mentions people actually see.",
                       show: false,
                     },
                     {
                       id: "collapseThree",
-                      question: "How long does it take to see results?",
+                      question: "How long does it take to get my reputation report?",
                       answer:
-                        "Most businesses start seeing improvements within 2-4 weeks of implementing our AI recommendations. The analysis itself takes just minutes, and you'll receive your visibility score and action plan immediately.",
+                        "You get your complete reputation report in seconds. Our AI analyzes everything in real-time and presents your reputation score, sentiment breakdown, key topics, and recommendations immediately.",
                       show: false,
                     },
                     {
@@ -620,9 +605,9 @@ export default function Home() {
                 <h6 className="top-reveal">PRICING</h6>
                 <h2 className="title-animation">Choose the Perfect Plan for Your Business</h2>
                 <p className="top-reveal">
-                  Start with our free trial and upgrade anytime.
-                  <br className="d-none d-xl-block" /> All plans include AI-powered visibility
-                  scoring and recommendations.
+                  Start with our free plan and upgrade anytime.
+                  <br className="d-none d-xl-block" /> All plans include AI-powered reputation
+                  analysis and recommendations.
                 </p>
               </div>
             </div>
@@ -668,33 +653,33 @@ export default function Home() {
                   <div className="row row-gap-4 justify-content-center">
                     {[
                       {
-                        name: "Starter",
-                        description: "Perfect for small businesses getting started online",
-                        price: "$29.00",
+                        name: "Free",
+                        description: "Perfect for getting started",
+                        price: "$0",
                         period: "/Month",
                         features: [
-                          { name: "AI Visibility Score", included: true },
-                          { name: "Website Analysis", included: true },
-                          { name: "Search Rankings Check", included: true },
-                          { name: "Basic Recommendations", included: true },
-                          { name: "Social Media Analysis", included: false },
+                          { name: "1 Scan Per Month", included: true },
+                          { name: "Basic Reputation Score", included: true },
+                          { name: "See Top Mentions", included: true },
+                          { name: "Sentiment Breakdown", included: false },
+                          { name: "Email Alerts", included: false },
                           { name: "Priority Support", included: false },
                         ],
                         buttonText: "Try for free",
                       },
                       {
-                        name: "Professional",
+                        name: "Pro",
                         description: "Most popular for growing businesses",
-                        price: "$79.00",
+                        price: "$29.00",
                         period: "/Month",
                         badge: "Best Value",
                         features: [
-                          { name: "AI Visibility Score", included: true },
-                          { name: "Website Analysis", included: true },
-                          { name: "Search Rankings Check", included: true },
-                          { name: "Advanced AI Recommendations", included: true },
-                          { name: "Social Media Analysis", included: true },
-                          { name: "Weekly Reports", included: true },
+                          { name: "Unlimited Scans", included: true },
+                          { name: "Full Reputation Score", included: true },
+                          { name: "Detailed Sentiment Analysis", included: true },
+                          { name: "Full Topic Breakdown", included: true },
+                          { name: "Email Alerts", included: true },
+                          { name: "Export Reports to PDF", included: true },
                         ],
                         buttonText: "Try for free",
                       },
@@ -704,12 +689,12 @@ export default function Home() {
                         price: "$199.00",
                         period: "/Month",
                         features: [
-                          { name: "AI Visibility Score", included: true },
-                          { name: "Website Analysis", included: true },
-                          { name: "Search Rankings Check", included: true },
-                          { name: "Premium AI Recommendations", included: true },
-                          { name: "Full Social Media Suite", included: true },
-                          { name: "Priority Support & Training", included: true },
+                          { name: "Everything in Pro", included: true },
+                          { name: "Multi-Location Tracking", included: true },
+                          { name: "Team Management", included: true },
+                          { name: "Custom Integration", included: true },
+                          { name: "Advanced Analytics", included: true },
+                          { name: "Dedicated Support", included: true },
                         ],
                         buttonText: "Contact Sales",
                       },
@@ -747,33 +732,33 @@ export default function Home() {
                   <div className="row row-gap-4 justify-content-center">
                     {[
                       {
-                        name: "Starter",
-                        description: "Perfect for small businesses getting started online",
-                        price: "$290.00",
+                        name: "Free",
+                        description: "Perfect for getting started",
+                        price: "$0",
                         period: "/Year",
                         features: [
-                          { name: "AI Visibility Score", included: true },
-                          { name: "Website Analysis", included: true },
-                          { name: "Search Rankings Check", included: true },
-                          { name: "Basic Recommendations", included: true },
-                          { name: "Social Media Analysis", included: false },
+                          { name: "1 Scan Per Month", included: true },
+                          { name: "Basic Reputation Score", included: true },
+                          { name: "See Top Mentions", included: true },
+                          { name: "Sentiment Breakdown", included: false },
+                          { name: "Email Alerts", included: false },
                           { name: "Priority Support", included: false },
                         ],
                         buttonText: "Try for free",
                       },
                       {
-                        name: "Professional",
+                        name: "Pro",
                         description: "Most popular for growing businesses",
-                        price: "$790.00",
+                        price: "$290.00",
                         period: "/Year",
                         badge: "Best Value",
                         features: [
-                          { name: "AI Visibility Score", included: true },
-                          { name: "Website Analysis", included: true },
-                          { name: "Search Rankings Check", included: true },
-                          { name: "Advanced AI Recommendations", included: true },
-                          { name: "Social Media Analysis", included: true },
-                          { name: "Weekly Reports", included: true },
+                          { name: "Unlimited Scans", included: true },
+                          { name: "Full Reputation Score", included: true },
+                          { name: "Detailed Sentiment Analysis", included: true },
+                          { name: "Full Topic Breakdown", included: true },
+                          { name: "Email Alerts", included: true },
+                          { name: "Export Reports to PDF", included: true },
                         ],
                         buttonText: "Try for free",
                       },
@@ -783,12 +768,12 @@ export default function Home() {
                         price: "$1,990.00",
                         period: "/Year",
                         features: [
-                          { name: "AI Visibility Score", included: true },
-                          { name: "Website Analysis", included: true },
-                          { name: "Search Rankings Check", included: true },
-                          { name: "Premium AI Recommendations", included: true },
-                          { name: "Full Social Media Suite", included: true },
-                          { name: "Priority Support & Training", included: true },
+                          { name: "Everything in Pro", included: true },
+                          { name: "Multi-Location Tracking", included: true },
+                          { name: "Team Management", included: true },
+                          { name: "Custom Integration", included: true },
+                          { name: "Advanced Analytics", included: true },
+                          { name: "Dedicated Support", included: true },
                         ],
                         buttonText: "Contact Sales",
                       },

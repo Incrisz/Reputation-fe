@@ -5,55 +5,55 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing Plans | BizVisibility AI - Affordable AI-Powered Visibility Solutions",
+  title: "Pricing Plans | Reputation AI - Reputation Management Solutions",
   description:
-    "Choose the perfect BizVisibility AI plan for your business. From starter to enterprise, get AI-powered visibility scoring, analysis, and smart recommendations.",
+    "Choose the perfect Reputation AI plan for your business. Get reputation scoring, sentiment analysis, narrative intelligence, and strategic guidance.",
 };
 
 const monthlyPlans = [
   {
     name: "Starter",
-    description: "Perfect for small businesses getting started online",
+    description: "Perfect for small businesses monitoring their reputation",
     price: "$29.00",
     period: "/Month",
     features: [
-      { name: "AI Visibility Score", included: true },
-      { name: "Website Analysis", included: true },
-      { name: "Search Rankings Check", included: true },
-      { name: "Basic Recommendations", included: true },
-      { name: "Social Media Analysis", included: false },
+      { name: "Web Scanning & Mentions", included: true },
+      { name: "Reputation Score", included: true },
+      { name: "Basic Sentiment Tracking", included: true },
+      { name: "Reputation Recommendations", included: true },
+      { name: "Advanced Sentiment Analysis", included: false },
       { name: "Priority Support", included: false },
     ],
     buttonText: "Try for free",
   },
   {
     name: "Professional",
-    description: "Most popular for growing businesses",
+    description: "Most popular for growing businesses with active online presence",
     price: "$79.00",
     period: "/Month",
     badge: "Best Value",
     features: [
-      { name: "AI Visibility Score", included: true },
-      { name: "Website Analysis", included: true },
-      { name: "Search Rankings Check", included: true },
-      { name: "Advanced AI Recommendations", included: true },
-      { name: "Social Media Analysis", included: true },
-      { name: "Weekly Reports", included: true },
+      { name: "Web Scanning & Mentions", included: true },
+      { name: "Real-Time Sentiment Tracking", included: true },
+      { name: "AI Reputation Scoring", included: true },
+      { name: "Narrative Intelligence & Theme Detection", included: true },
+      { name: "Advanced Sentiment Analysis", included: true },
+      { name: "Strategic Guidance & Reports", included: true },
     ],
     buttonText: "Try for free",
   },
   {
     name: "Enterprise",
-    description: "Complete solution for large organizations",
+    description: "Complete reputation management for large organizations",
     price: "$199.00",
     period: "/Month",
     features: [
-      { name: "AI Visibility Score", included: true },
-      { name: "Website Analysis", included: true },
-      { name: "Search Rankings Check", included: true },
-      { name: "Premium AI Recommendations", included: true },
-      { name: "Full Social Media Suite", included: true },
-      { name: "Priority Support & Training", included: true },
+      { name: "Unlimited Web Scanning & Mentions", included: true },
+      { name: "Real-Time Sentiment Monitoring", included: true },
+      { name: "Advanced Reputation Scoring Engine", included: true },
+      { name: "Premium Narrative Analysis & Insights", included: true },
+      { name: "Competitive Reputation Intelligence", included: true },
+      { name: "Custom Strategic Guidance & Priority Support", included: true },
     ],
     buttonText: "Contact Sales",
   },
@@ -62,47 +62,47 @@ const monthlyPlans = [
 const yearlyPlans = [
   {
     name: "Starter",
-    description: "Perfect for small businesses getting started online",
+    description: "Perfect for small businesses monitoring their reputation",
     price: "$290.00",
     period: "/Year",
     features: [
-      { name: "AI Visibility Score", included: true },
-      { name: "Website Analysis", included: true },
-      { name: "Search Rankings Check", included: true },
-      { name: "Basic Recommendations", included: true },
-      { name: "Social Media Analysis", included: false },
+      { name: "Web Scanning & Mentions", included: true },
+      { name: "Reputation Score", included: true },
+      { name: "Basic Sentiment Tracking", included: true },
+      { name: "Reputation Recommendations", included: true },
+      { name: "Advanced Sentiment Analysis", included: false },
       { name: "Priority Support", included: false },
     ],
     buttonText: "Try for free",
   },
   {
     name: "Professional",
-    description: "Most popular for growing businesses",
+    description: "Most popular for growing businesses with active online presence",
     price: "$790.00",
     period: "/Year",
     badge: "Best Value",
     features: [
-      { name: "AI Visibility Score", included: true },
-      { name: "Website Analysis", included: true },
-      { name: "Search Rankings Check", included: true },
-      { name: "Advanced AI Recommendations", included: true },
-      { name: "Social Media Analysis", included: true },
-      { name: "Weekly Reports", included: true },
+      { name: "Web Scanning & Mentions", included: true },
+      { name: "Real-Time Sentiment Tracking", included: true },
+      { name: "AI Reputation Scoring", included: true },
+      { name: "Narrative Intelligence & Theme Detection", included: true },
+      { name: "Advanced Sentiment Analysis", included: true },
+      { name: "Strategic Guidance & Reports", included: true },
     ],
     buttonText: "Try for free",
   },
   {
     name: "Enterprise",
-    description: "Complete solution for large organizations",
+    description: "Complete reputation management for large organizations",
     price: "$1,990.00",
     period: "/Year",
     features: [
-      { name: "AI Visibility Score", included: true },
-      { name: "Website Analysis", included: true },
-      { name: "Search Rankings Check", included: true },
-      { name: "Premium AI Recommendations", included: true },
-      { name: "Full Social Media Suite", included: true },
-      { name: "Priority Support & Training", included: true },
+      { name: "Unlimited Web Scanning & Mentions", included: true },
+      { name: "Real-Time Sentiment Monitoring", included: true },
+      { name: "Advanced Reputation Scoring Engine", included: true },
+      { name: "Premium Narrative Analysis & Insights", included: true },
+      { name: "Competitive Reputation Intelligence", included: true },
+      { name: "Custom Strategic Guidance & Priority Support", included: true },
     ],
     buttonText: "Contact Sales",
   },
@@ -119,11 +119,10 @@ export default function PricingPage() {
           <div className="row justify-content-between align-items-center">
             <div className="col-lg-6">
               <div className="banner-two-section__content">
-                <h6 className="title-animation">Pick your plan</h6>
-                <h1 className="title-animation">Pricing built for growth</h1>
+                <h6 className="title-animation">Choose your plan</h6>
+                <h1 className="title-animation">Reputation Management for Every Business</h1>
                 <p className="right-reveal">
-                  Start with a free scan, then upgrade when you&apos;re ready to monitor more
-                  locations, keywords, and channels.
+                  Start with a free reputation scan to understand your reputation score, sentiment, and key narratives. Upgrade to unlock advanced analysis and strategic guidance.
                 </p>
                 <div className="banner-two-buttons">
                   <div className="left-reveal">

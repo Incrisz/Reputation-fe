@@ -3,26 +3,26 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bizvisibility.ai"),
-  title: "BizVisibility AI - AI-Powered Online Visibility Scoring & Reputation Management",
+  metadataBase: new URL("https://reputationai.io"),
+  title: "Reputation AI - Online Reputation & Sentiment Analysis Platform",
   description:
-    "BizVisibility AI uses artificial intelligence to evaluate your online business across websites, search engines, and social platforms. Get intelligent visibility scores and actionable recommendations to grow your business digitally.",
+    "Reputation AI analyzes what people say about your business online. Get your reputation score, sentiment breakdown, key topics, and actionable recommendations to improve your online reputation across review sites, news, social media, and more.",
   keywords:
-    "online visibility, AI reputation management, business visibility score, SEO analysis, social media monitoring, search ranking, digital presence, online reputation",
-  authors: [{ name: "BizVisibility AI" }],
+    "online reputation, reputation management, sentiment analysis, reputation scoring, business reputation, digital reputation, online presence monitoring, brand monitoring, reputation tracking, customer reviews",
+  authors: [{ name: "Reputation AI" }],
   openGraph: {
     type: "website",
-    title: "BizVisibility AI - AI-Powered Online Visibility Scoring",
+    title: "Reputation AI - Know What People Say About Your Business",
     description:
-      "Our AI-powered platform evaluates how visible your business is online and provides intelligent recommendations to help you grow digitally.",
-    images: ["/images/logo/bizvisibility-og-image.jpg"],
+      "Reputation AI scans the web to find what people are saying about your business. Get actionable insights to improve your online reputation.",
+    images: ["/images/logo/reputation-og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BizVisibility AI - AI-Powered Online Visibility Scoring",
+    title: "Reputation AI - Know What People Say About Your Business",
     description:
-      "Our AI-powered platform evaluates how visible your business is online and provides intelligent recommendations to help you grow digitally.",
-    images: ["/images/logo/bizvisibility-og-image.jpg"],
+      "Reputation AI scans the web to find what people are saying about your business. Get actionable insights to improve your online reputation.",
+    images: ["/images/logo/reputation-og-image.jpg"],
   },
   icons: {
     shortcut: "/images/logo/favicon.ico",
@@ -61,19 +61,16 @@ export default function RootLayout({
         {/* Preloader */}
         <div id="preloader" suppressHydrationWarning>
           <div id="text">
-            <p className="active">B</p>
-            <p>i</p>
-            <p>z</p>
-            <p className="active">V</p>
-            <p>i</p>
-            <p>s</p>
-            <p>i</p>
-            <p>b</p>
-            <p>i</p>
-            <p>l</p>
-            <p>i</p>
+            <p className="active">R</p>
+            <p>e</p>
+            <p>p</p>
+            <p>u</p>
             <p>t</p>
-            <p>y</p>
+            <p>a</p>
+            <p>t</p>
+            <p>i</p>
+            <p>o</p>
+            <p>n</p>
             <p> </p>
             <p className="active">A</p>
             <p>I</p>
