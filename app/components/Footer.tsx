@@ -40,7 +40,7 @@ export default function Footer() {
                 <Link href="/">
                   <Image
                     src="/images/logo/logo2.svg"
-                    alt="BizVisibility AI logo"
+                    alt="Reputation AI logo"
                     width={150}
                     height={40}
                     style={{ width: 'auto', height: 'auto' }}
@@ -49,8 +49,8 @@ export default function Footer() {
               </div>
               <br />
               <p>
-                BizVisibility AI uses artificial intelligence to evaluate your online presence and
-                provide actionable recommendations to help you grow your business digitally.
+                Reputation AI uses artificial intelligence to monitor and analyze your online reputation,
+                providing actionable insights to help you build and maintain a strong digital presence.
               </p>
               <ul className="social">
                 <li>
@@ -136,7 +136,7 @@ export default function Footer() {
             <div className="col-lg-12">
               <div className="copy-right__content d-flex flex-wrap gap-3 justify-content-between align-items-center">
                 <p className="copy-right__text mb-0">
-                  © 2025. All Rights Reserved By BizVisibility AI
+                  © 2025. All Rights Reserved By Reputation AI
                 </p>
                 <div className="d-flex gap-3 copy-right__text mb-0">
                   <Link href="/privacy-policy">Privacy Policy</Link>
