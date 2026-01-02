@@ -869,14 +869,27 @@ function initializeScripts() {
       }
 
       const activeLink = navPills.querySelector('.nav-link.active');
-      if (activeLink) updateIndicator(activeLink);
+      if (activeLink) {
+        setTimeout(() => updateIndicator(activeLink), 100);
+      }
 
       links.forEach(link => {
         link.addEventListener('click', () => {
           navPills.querySelector('.nav-link.active')?.classList.remove('active');
           link.classList.add('active');
+          setTimeout(() => updateIndicator(link), 10);
+        });
+
+        // Bootstrap tab event listeners
+        link.addEventListener('shown.bs.tab', (e) => {
           updateIndicator(link);
         });
+      });
+
+      // Re-calculate on window resize
+      window.addEventListener('resize', () => {
+        const active = navPills.querySelector('.nav-link.active');
+        if (active) updateIndicator(active);
       });
     }
   });

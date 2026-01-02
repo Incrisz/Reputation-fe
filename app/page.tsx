@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AccordionFAQ from "./components/AccordionFAQ";
+import PricingTabs from "./components/PricingTabs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -535,60 +537,7 @@ export default function Home() {
                   </h2>
                 </div>
                 <div className="accordion mt-60" id="greatSolutions">
-                  {[
-                    {
-                      id: "collapseOne",
-                      question: "How does Reputation AI work?",
-                      answer:
-                        "Our AI scans the entire web including review sites, news, social media, blogs, and forums for mentions of your business. We analyze each mention for sentiment (positive, negative, neutral) and identify key topics. You get a reputation score and actionable recommendations in seconds.",
-                      show: true,
-                    },
-                    {
-                      id: "collapseTwo",
-                      question: "What sources does Reputation AI analyze?",
-                      answer:
-                        "Reputation AI analyzes mentions across review platforms (Google Reviews, Yelp, Trustpilot), news sources, social media platforms (Facebook, Twitter, Instagram, LinkedIn), blogs, forums, and more. We focus on the mentions people actually see.",
-                      show: false,
-                    },
-                    {
-                      id: "collapseThree",
-                      question: "How long does it take to get my reputation report?",
-                      answer:
-                        "You get your complete reputation report in seconds. Our AI analyzes everything in real-time and presents your reputation score, sentiment breakdown, key topics, and recommendations immediately.",
-                      show: false,
-                    },
-                    {
-                      id: "collapseFore",
-                      question: "Is my business data secure?",
-                      answer:
-                        "Absolutely. We use enterprise-grade encryption and security protocols to protect your data. We only analyze publicly available information about your business and never share your data with third parties.",
-                      show: false,
-                    },
-                  ].map((faq, index) => (
-                    <div key={index} className="accordion-item top-reveal">
-                      <div className="accordion-header">
-                        <button
-                          className={`accordion-button ${!faq.show ? "collapsed" : ""}`}
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target={`#${faq.id}`}
-                          aria-expanded={faq.show}
-                          aria-controls={faq.id}
-                        >
-                          {faq.question}
-                        </button>
-                      </div>
-                      <div
-                        id={faq.id}
-                        className={`accordion-collapse collapse ${faq.show ? "show" : ""}`}
-                        data-bs-parent="#greatSolutions"
-                      >
-                        <div className="accordion-body">
-                          <p>{faq.answer}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                  <AccordionFAQ />
                 </div>
               </div>
             </div>
@@ -615,33 +564,7 @@ export default function Home() {
           <div className="row mt-60">
             <div className="col-lg-12">
               <div className="text-center">
-                <div className="nav nav-pills" role="tablist">
-                  <button
-                    className="nav-link active"
-                    id="pills-monthly-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-monthly"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-monthly"
-                    aria-selected="true"
-                  >
-                    Monthly
-                  </button>
-                  <button
-                    className="nav-link"
-                    id="pills-annually-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-annually"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-annually"
-                    aria-selected="false"
-                  >
-                    Annually
-                  </button>
-                  <span className="nav-indicator"></span>
-                </div>
+                <PricingTabs />
               </div>
               <div className="tab-content top-reveal">
                 <div

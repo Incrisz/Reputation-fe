@@ -4762,6 +4762,16 @@ html ::selection {
     padding-top: 0;
 }
 
+.accordion-collapse {
+    display: none;
+}
+
+.accordion-collapse.show {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
 .form-check-input:checked {
     background: linear-gradient(135deg, hsl(var(--base)) 0%, hsl(var(--base-two)) 100%);
     border-color: hsl(var(--base));
