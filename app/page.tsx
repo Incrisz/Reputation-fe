@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import AccordionFAQ from "./components/AccordionFAQ";
 import PricingTabs from "./components/PricingTabs";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -33,11 +32,6 @@ export default function Home() {
                   Reputation AI helps you understand what people are saying about your business online and gives you actionable steps to improve it. In seconds, get a complete picture of your online reputation with sentiment analysis, key topics, and personalized recommendations.
                 </p>
                 <div className="banner-two-buttons">
-                  <div className="right-reveal">
-                    <Link href="/register" className="btn-round-two">
-                      Try for free
-                    </Link>
-                  </div>
                   <div className="left-reveal">
                     <div className="youtube-play">
                       <a href="https://www.youtube.com/embed/C_BjC7KJ0XY" className="video-play-btn">
@@ -638,9 +632,6 @@ export default function Home() {
                               </li>
                             ))}
                           </ul>
-                          <Link href="/register" className="btn-round-two">
-                            {plan.buttonText}
-                          </Link>
                         </div>
                       </div>
                     ))}
@@ -717,9 +708,6 @@ export default function Home() {
                               </li>
                             ))}
                           </ul>
-                          <Link href="/register" className="btn-round-two">
-                            {plan.buttonText}
-                          </Link>
                         </div>
                       </div>
                     ))}

@@ -78,11 +78,6 @@ export default function HowItWorksPage() {
                   Reputation AI uses three core thinking systems to understand your digital reputation: scanning the web to find mentions, analyzing sentiment and narratives to understand perception, and providing strategic guidance to improve your standing.
                 </p>
                 <div className="banner-two-buttons">
-                  <div className="right-reveal">
-                    <Link href="/register" className="btn-round-two">
-                      Try for free
-                    </Link>
-                  </div>
                   <div className="left-reveal">
                     <Link href="/pricing" className="btn-round-two btn-outline">
                       View plans
