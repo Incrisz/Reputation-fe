@@ -51,6 +51,13 @@ export default function AboutPage() {
                 <p className="right-reveal">
                   Reputation AI combines four intelligent systems to evaluate your complete online reputation: visibility intelligence, sentiment analysis, reputation scoring, and strategic guidance. We help businesses understand how they appear online and provide actionable recommendations to enhance their digital standing.
                 </p>
+                <div className="banner-two-buttons d-flex flex-wrap align-items-center gap-4">
+                  <div className="right-reveal">
+                    <a href="#" className="btn-round-two">
+                      Try for free
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="col-xl-5 align-self-center animate-3d" style={{ perspective: "400px" }}>

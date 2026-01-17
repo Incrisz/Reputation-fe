@@ -48,6 +48,11 @@ export default function Navbar() {
           />
         </Link>
         <div className="order-1 d-flex align-items-center gap-3">
+          <div className="nave-quote">
+            <a href="#" className="btn-round-two">
+              <span>Try for free</span>
+            </a>
+          </div>
           <button
             className="navbar-toggler"
             type="button"

@@ -32,6 +32,11 @@ export default function Home() {
                   Reputation AI helps you understand what people are saying about your business online and gives you actionable steps to improve it. In seconds, get a complete picture of your online reputation with sentiment analysis, key topics, and personalized recommendations.
                 </p>
                 <div className="banner-two-buttons">
+                  <div className="right-reveal">
+                    <a href="#" className="btn-round-two">
+                      Try for free
+                    </a>
+                  </div>
                   <div className="left-reveal">
                     <div className="youtube-play">
                       <a href="https://www.youtube.com/embed/C_BjC7KJ0XY" className="video-play-btn">
@@ -632,6 +637,9 @@ export default function Home() {
                               </li>
                             ))}
                           </ul>
+                          <a href="#" className="btn-round-two">
+                            {plan.buttonText}
+                          </a>
                         </div>
                       </div>
                     ))}
@@ -708,6 +716,9 @@ export default function Home() {
                               </li>
                             ))}
                           </ul>
+                          <a href="#" className="btn-round-two">
+                            {plan.buttonText}
+                          </a>
                         </div>
                       </div>
                     ))}
